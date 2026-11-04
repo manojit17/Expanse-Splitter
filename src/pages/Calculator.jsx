@@ -3,15 +3,14 @@ import PeopleSection from '../components/PeopleSection.jsx'
 import ExpenseSection from '../components/ExpenseSection.jsx'
 import ResultsSection from '../components/ResultsSection.jsx'
 
-// This page keeps all the data (state). The child components only show it
-// and call the functions below when the user does something.
+
 function Calculator() {
   const [people, setPeople] = useState([])
   const [expenses, setExpenses] = useState([])
   const [payments, setPayments] = useState([])
   const [message, setMessage] = useState('')
 
-  // returns true when the person was added
+ 
   function addPerson(name) {
     if (!name) {
       setMessage('Please type a name.')
@@ -36,7 +35,7 @@ function Calculator() {
     setMessage('')
   }
 
-  // returns true when the expense was added
+  
   function addExpense(expense) {
     if (!expense.description || expense.amount <= 0) {
       setMessage('Please enter a description and an amount greater than 0.')
@@ -52,8 +51,7 @@ function Calculator() {
   }
 
   function deleteExpense(id) {
-    // Payments were based on the old balances, so they no longer make sense
-    // once an expense is removed. Clear them (after asking) so the sheet stays correct.
+  
     if (payments.length > 0) {
       const ok = window.confirm(
         'Deleting this expense changes the balances, so payments already marked as paid will be cleared too. Continue?'
@@ -65,17 +63,17 @@ function Calculator() {
     setMessage('')
   }
 
-  // "from" gives "to" some money (the amount is already checked in SettleRow)
+  
     function settle(from, to, amount, method) {
     setPayments([...payments, { from, to, amount, method }])
     setMessage('')
   }
   function loadExample() {
-    setPeople(['Asha', 'Ravi', 'Meera'])
+    setPeople(['Sani', 'Raj', 'Meena'])
     setExpenses([
-      { id: 1, description: 'Hotel', amount: 6000, paidBy: 'Asha', splitAmong: ['Asha', 'Ravi', 'Meera'] },
-      { id: 2, description: 'Dinner', amount: 1800, paidBy: 'Ravi', splitAmong: ['Asha', 'Ravi', 'Meera'] },
-      { id: 3, description: 'Cab to airport', amount: 900, paidBy: 'Meera', splitAmong: ['Asha', 'Meera'] },
+      { id: 1, description: 'Hotel', amount: 6000, paidBy: 'Sani', splitAmong: ['Sani', 'Raj', 'Meena'] },
+      { id: 2, description: 'Dinner', amount: 1800, paidBy: 'Raj', splitAmong: ['Sani', 'Raj', 'Meena'] },
+      { id: 3, description: 'Cab to airport', amount: 900, paidBy: 'Meena', splitAmong: ['Sani', 'Meena'] },
     ])
     setPayments([])
     setMessage('')

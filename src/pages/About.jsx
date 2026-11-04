@@ -27,7 +27,7 @@ function About() {
 
       <section className="card">
         <h2>Built with</h2>
-        <p>React, React Router, and plain CSS. The calculation code is kept in one small file so it is easy to follow.</p>
+        <p>React, React Router, and CSS.</p>
       </section>
 
       <Link to="/calculator" className="btn">Go to calculator</Link>

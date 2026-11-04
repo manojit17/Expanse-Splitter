@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import { money } from '../utils/splitLogic.js'
 
-// Step 2: add expenses and see the list of expenses
 function ExpenseSection({ people, expenses, onAdd, onDelete }) {
   const [description, setDescription] = useState('')
   const [amount, setAmount] = useState('')
   const [paidBy, setPaidBy] = useState('')
-  const [excluded, setExcluded] = useState([]) // people who did NOT share this expense
+  const [excluded, setExcluded] = useState([]) 
 
-  // if nothing is chosen yet, use the first person
+  
   const payer = paidBy || people[0] || ''
   const sharedBy = people.filter((p) => !excluded.includes(p))
 

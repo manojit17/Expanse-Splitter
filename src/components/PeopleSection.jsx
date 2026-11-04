@@ -6,7 +6,7 @@ function PeopleSection({ people, onAdd, onRemove }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (onAdd(name.trim())) setName('') // clear the box only if it worked
+    if (onAdd(name.trim())) setName('') 
   }
 
   return (

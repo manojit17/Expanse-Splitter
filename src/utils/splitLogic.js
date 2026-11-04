@@ -1,8 +1,5 @@
-// All the calculation lives here, away from the UI, so it is easy to read and test.
 
-// Step 1: work out how much each person paid, their fair share, and the difference.
-// expenses: [{ id, description, amount, paidBy, splitAmong: ['Asha', 'Ravi'] }]
-// payments: [{ from, to, amount }]  (settlements already made)
+
 export function calculateBalances(people, expenses, payments) {
   const rows = {}
   people.forEach((name) => {
@@ -36,7 +33,7 @@ export function calculateBalances(people, expenses, payments) {
   return Object.values(rows)
 }
 
-// Step 2: turn the balances into a short list of "who pays whom".
+
 // People who owe money are matched with people who are owed money.
 export function simplifyDebts(balances) {
   const debtors = balances

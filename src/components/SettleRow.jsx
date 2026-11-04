@@ -3,7 +3,7 @@ import { money } from '../utils/splitLogic.js'
 
 function SettleRow({ item, onSettle }) {
   const [amount, setAmount] = useState(item.amount.toFixed(2))
-  const [method, setMethod] = useState('UPI') // new: UPI or Cash
+  const [method, setMethod] = useState('UPI')
   const [error, setError] = useState('')
 
   function handlePay() {
@@ -19,7 +19,7 @@ function SettleRow({ item, onSettle }) {
     }
 
     setError('')
-    onSettle(item.from, item.to, value, method) // new: send the method too
+    onSettle(item.from, item.to, value, method) 
   }
 
   return (
