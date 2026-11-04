@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({ user, onLogout }) {
   return (
     <header className="navbar">
       <span className="logo">💸 Expense Splitter</span>
@@ -8,6 +8,15 @@ function Navbar() {
         <NavLink to="/" end>Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/calculator">Calculator</NavLink>
+
+        {user ? (
+          <>
+            <span className="user-name">{user}</span>
+            <button className="btn-small logout" onClick={onLogout}>Logout</button>
+          </>
+        ) : (
+          <NavLink to="/login">Login</NavLink>
+        )}
       </nav>
     </header>
   )

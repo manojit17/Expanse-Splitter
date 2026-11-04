@@ -109,3 +109,12 @@ th { background: #f4f7ff; color: #555; }
   .navbar { flex-direction: column; gap: 8px; }
 }
 .settle-row select { width: auto; margin-bottom: 0; }
+/* ---------- login page ---------- */
+.auth-card { max-width: 420px; margin: 30px auto; }
+.btn-full { width: 100%; margin-top: 18px; }
+.show-password { margin-top: 10px; }
+
+/* ---------- navbar user area ---------- */
+.user-name { margin-left: 18px; font-size: 13px; color: #dbe5ff; }
+.logout { margin-left: 10px; background: rgba(255,255,255,0.2); }
+.logout:hover { background: rgba(255,255,255,0.35); }
